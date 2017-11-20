@@ -16,6 +16,8 @@
         message-text (get-in payload [:message :text])]
     (cond
       (s/includes? (s/lower-case message-text) "image") (msg/image sender-id)
+      (s/includes? (s/lower-case message-text) "quick reply") (msg/send-quick-reply sender-id)
+      (s/includes? (s/lower-case message-text) "buttons") (msg/send-buttons sender-id)
       :else (msg/text-fallback sender-id))))
 
 (defn on-payload [payload]

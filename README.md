@@ -19,8 +19,10 @@ The Bot replies with "Hello World!" on any text input and returns an image when 
 
 To start a web server for the application, run:
 
-    lein ring server-headless
-    
+```clj
+lein ring server-headless
+```
+
 ### HTTPS for the Facebook Webhook Authentication via ngrok
 
 Run `ngrok http 3000` ([read more about ngrok](https://ngrok.com))
@@ -29,10 +31,12 @@ Run `ngrok http 3000` ([read more about ngrok](https://ngrok.com))
 
 Provide your Facebook Page Access Token, Verify Token and Page Secret for local development by creating a file called `profiles.clj` in the root directory `/profiles.clj`.
 
-		{:dev {:env {:page-access-token "REPLACE"
-                     :page-secret "REPLACE"
-		   		   	 :verify-token "REPLACE"}}}
-                     
+```clj
+{:dev {:env {:page-access-token "REPLACE"
+             :page-secret "REPLACE"
+             :verify-token "REPLACE"}}}
+```
+
 Also check out this [step-by-step guide](https://github.com/lemmings-io/02-facebook-example) for further details on getting your development environment for a Facebook Messenger Bot up and running in Clojure.
 
 ## License
